@@ -3,6 +3,8 @@ FROM centos:centos7
 MAINTAINER Siarhei Krukau <siarhei.krukau@gmail.com>
 
 # Pre-requirements
+RUN yum -y update; \
+    yum clean all
 RUN yum install -y initscripts net-tools libaio bc; \
     yum clean all
 RUN mkdir -p /run/lock/subsys
